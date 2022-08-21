@@ -30,7 +30,7 @@ const options = {
     url: "https://bionic-reading1.p.rapidapi.com/convert",
     headers: {
       "content-type": "application/x-www-form-urlencoded",
-      "X-RapidAPI-Key": "77e9add8abmshff24a93762c7c03p10d305jsn5fc98b3f4fe5",
+      "X-RapidAPI-Key": `${process.env.KEY}`,
       "X-RapidAPI-Host": "bionic-reading1.p.rapidapi.com",
     },
     data: encodedParams,
