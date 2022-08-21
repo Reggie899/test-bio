@@ -4,11 +4,11 @@ import express from "express";
 const router = express.Router();
 
 
-export const hello = (req, res) => {
+export const test = (req, res) => {
   res.status(200).json("dataResult");
 };
 
-router.get("/", hello);
+router.get("/", test);
 
 
 
