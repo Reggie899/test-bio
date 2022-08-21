@@ -46,7 +46,7 @@ axios
   .catch(function (error) {
     console.error(error);
   });
-console.log(dataResult);
+// console.log(dataResult);
 
 const hello = (req, res) => {
   res.status(200).json(dataResult);
@@ -56,8 +56,7 @@ const hello = (req, res) => {
 const encodedParams2 = new URLSearchParams();
 encodedParams2.append(
   "content",
-  "Before becoming a web developer I got a degree in Sociology and worked in different roles in the social and cultural exchange field. I started out as an assistant, then moved on to being a coordinator and team lead to later becoming a counselor. It has been a great adventure that has equipped me with a lot of experience and trained me to see the big picture. I kicked off my web development journey by learning about different online training programs and decided to start learning coding with SheCodes. Quickly, I was captivated by all the things I was able to do and to create and decided to enter the web development program of the DCI that teaches web development in depth and qualified me to become a full stack developer. This is where I am currently enrolled until December 2022."
-);
+  "Before becoming a web developer I got a degree in Sociology and worked in different roles in the social and cultural exchange field. I started out as an assistant, then moved on to being a coordinator and team lead to later becoming a counselor. It has been a great adventure that has equipped me with a lot of experience and trained me to see the big picture. I kicked off my web development journey by learning about different online training programs and decided to start learning coding with SheCodes. Quickly, I was captivated by all the things I was able to do and create and decided to enter the web development program of the DCI that teaches web development in depth and qualifies me as a full stack developer. This is where I am currently enrolled until December 2022.");
 encodedParams2.append("response_type", "html");
 encodedParams2.append("request_type", "html");
 encodedParams2.append("fixation", "1");
@@ -84,14 +83,46 @@ axios
   .catch(function (error) {
     console.error(error);
   });
-console.log(dataResult2);
+// console.log(dataResult2);
 
 const hello2 = (req, res) => {
   res.status(200).json(dataResult2);
 };
 
+//THIRD TEXT BLOCK: 
+const encodedParams3 = new URLSearchParams();
+encodedParams3.append(
+  "content",
+  "I am striving to create fun and interactive experiences for websites and apps users. These experiences can be heartwarming, inspiring, exciting, dreamy, ...you name it. If you are looking for exactly that, feel welcome to contact me. Let’s come up with a tailor made product for you and make it happen. I am looking forward to working with you.");
+encodedParams3.append("response_type", "html");
+encodedParams3.append("request_type", "html");
+encodedParams3.append("fixation", "1");
+encodedParams3.append("saccade", "10");
+
+const options3 = {
+    method: "POST",
+    url: "https://bionic-reading1.p.rapidapi.com/convert",
+    headers: {
+      "content-type": "application/x-www-form-urlencoded",
+      "X-RapidAPI-Key": "77e9add8abmshff24a93762c7c03p10d305jsn5fc98b3f4fe5",
+      "X-RapidAPI-Host": "bionic-reading1.p.rapidapi.com",
+    },
+    data: encodedParams3,
+  };
+  let dataResult3 = "ll";
+  axios
+  .request(options3)
+  .then(function (response) {
+    // console.log(response.data);
+    dataResult3 = response.data;
+  })
+  .catch(function (error) {
+    console.error(error);
+  });
+console.log(dataResult3);
+
 const hello3 = (req, res) => {
-  res.status(200).json("dataResult");
+  res.status(200).json(dataResult3);
 };
 
 app.get("/one", hello);
