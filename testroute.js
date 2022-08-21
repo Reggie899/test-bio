@@ -8,7 +8,7 @@ export const test = (req, res) => {
   res.status(200).json("dataResult");
 };
 
-router.get("/", test);
+router.get("/hello", test);
 
 
 
