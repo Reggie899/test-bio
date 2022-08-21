@@ -1,16 +1,24 @@
-import express from 'express';
-import cors from 'cors';
-
-const server = express();
-server.use(cors()); 
-
-server.use(express.json()); 
-import test from "./testroute.js"
+const express = require("express");
+const cors = require("cors");
+const app = express();
 
 
-server.use('/', test);
+app.use(
+  cors({
+    origin: "*",
+  })
+);
 
+app.use(
+  express.json({
+    type: ["application/json", "text/plain"],
+  })
+);
 
-// const PORT = 5557;
+app.get("/", (req, res) => {
+  res.status(200).send("Server is working!");
+});
 
-// server.listen(PORT, () => console.log(`Server is listening to port ${PORT} and running`));
+const PORT = process.env.PORT || 5002;
+
+app.listen(PORT, () => console.log(`it's alive on ${PORT}`));
